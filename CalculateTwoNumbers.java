@@ -1,4 +1,4 @@
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 public class CalculateTwoNumbers {
     public static void main(String[] args){
