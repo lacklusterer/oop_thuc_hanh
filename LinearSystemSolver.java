@@ -25,7 +25,7 @@ public class LinearSystemSolver {
             double detD2 = a11 * b2 - a21 * b1;
             double x1 = detD1 / detD;
             double x2 = detD2 / detD;
-            System.out.printf("Solution: %.2f and %.2f", x1, x2);
+            System.out.printf("Solution: %.2f and %.2f\n", x1, x2);
         }
     }
 }
