@@ -12,6 +12,9 @@ public class AddTwoMatrices {
         int[][] matrix2 = new int[rows][cols];
         int[][] sumMatrix = new int[rows][cols];
 
+        //guide
+        System.out.println("Elements of the same row must be separated by a space. Hit enter to input the next row.");
+
         //first matrix
         System.out.println("Input the elements of the first matrix: ");
         for (int i = 0; i < rows; i++) {
