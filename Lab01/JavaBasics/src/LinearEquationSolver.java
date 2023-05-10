@@ -1,5 +1,3 @@
-package Lab01;
-
 import javax.swing.JOptionPane;
 import java.util.Objects;
 
@@ -11,7 +9,7 @@ public class LinearEquationSolver {
         while (!isValid) {
             try {
                 aString = JOptionPane.showInputDialog(null,
-                        "ax + b = 0\nEnter the value of a:", "Lab01.LinearEquationSolver",
+                        "ax + b = 0\nEnter the value of a:", "LinearEquationSolver",
                         JOptionPane.INFORMATION_MESSAGE);
                 if (Objects.equals(aString, "0")) {
                     throw new Exception("Value of a cannot be zero!");
@@ -23,7 +21,7 @@ public class LinearEquationSolver {
             }
         }
         String bString = JOptionPane.showInputDialog(null,
-                String.format("%sx + b = 0\nEnter the value of b:", aString), "Lab01.LinearEquationSolver",
+                String.format("%sx + b = 0\nEnter the value of b:", aString), "LinearEquationSolver",
                 JOptionPane.INFORMATION_MESSAGE);
 
         double a = Double.parseDouble(aString);

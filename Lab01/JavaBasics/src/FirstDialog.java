@@ -1,5 +1,3 @@
-package Lab01;// Example 2: Lab01.FirstDialog.java
-
 import javax.swing.JOptionPane;
 public class FirstDialog {
     public static void main(String[] args){

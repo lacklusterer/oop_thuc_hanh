@@ -1,5 +1,3 @@
-package Lab01;
-
 import java.util.Scanner;
 // 1     *     4
 // 2    ***    3
