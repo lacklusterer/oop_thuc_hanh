@@ -1,3 +1,5 @@
+package Lab01;
+
 import java.util.Arrays;
 public class ArrayThings {
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package Lab01;
+
 import java.util.Scanner;
 // a11 a12 b1
 // a21 a22 b2
