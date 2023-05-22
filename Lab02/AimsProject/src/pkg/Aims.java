@@ -18,7 +18,9 @@ public class Aims {
                 "Animation", 19.99f);
         anOrder.addDigitalVideoDisc(dvd3);
 
+        anOrder.removeDigitalVideoDisc(dvd3);
+
         //Get total cost
-        System.out.printf("Total cost is %f", anOrder.totalCost());
+        System.out.printf("Total cost is %.2f", anOrder.totalCost());
     }
 }
