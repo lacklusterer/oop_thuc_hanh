@@ -13,19 +13,17 @@ public class Cart {
         }
     }
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
-        for (int i = 0; i < itemsOrdered.length; i++) {
+        for (int i = 0; i < qtyOrdered; i++) {
             if (itemsOrdered[i] == disc) {
                 qtyOrdered--;
                 itemsOrdered[i] = null;
                 break;
-            } else {
-                System.out.printf("%s is not in cart%n", disc);
             }
         }
     }
     public float totalCost() {
         float total = 0.0f;
-        for (int i = 0; i <= qtyOrdered; i++) {
+        for (int i = 0; i < qtyOrdered; i++) {
             total += itemsOrdered[i].getCost();
         }
         return total;
