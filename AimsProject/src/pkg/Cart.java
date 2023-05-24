@@ -12,6 +12,13 @@ public class Cart {
             System.out.println("Cart is full!");
         }
     }
+    public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList) {
+        for (var disc: dvdList) addDigitalVideoDisc(disc);
+    }
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1,DigitalVideoDisc dvd2) {
+        addDigitalVideoDisc(dvd1);
+        addDigitalVideoDisc(dvd2);
+    }
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
         for (int i = 0; i < qtyOrdered; i++) {
             if (itemsOrdered[i] == disc) {
