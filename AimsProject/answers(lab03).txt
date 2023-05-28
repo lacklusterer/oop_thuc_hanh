@@ -1,0 +1,2 @@
+1. Java arguments are pass by value. A copy of the value is passed to the method, changes made inside the method do not affect the data of the actual objects outside the method.
+2. The changeTitle call changed the title of the dvd because it called the method setTitle of DigitalVideoDisc.
