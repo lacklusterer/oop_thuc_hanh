@@ -6,6 +6,10 @@ public class DigitalVideoDisc {
     private int length;
     private float cost;
 
+    // Class attribute and instant attribute
+    private static int nbDigitalVideoDiscs = 0;
+    private int id;
+
     public String getTitle() {
         return title;
     }
@@ -24,6 +28,10 @@ public class DigitalVideoDisc {
 
     public float getCost() {
         return cost;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public DigitalVideoDisc(String title) {
@@ -57,5 +65,11 @@ public class DigitalVideoDisc {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    // Instance initializer
+    {
+        nbDigitalVideoDiscs++;
+        id = nbDigitalVideoDiscs;
     }
 }
