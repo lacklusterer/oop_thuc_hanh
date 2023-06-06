@@ -1,6 +1,6 @@
 package pkg;
 
-public class AimsCartTest {
+public class CartTest {
     public static void main(String[] args) {
         //Create cart named anOrder
         Cart anOrder = new Cart();
