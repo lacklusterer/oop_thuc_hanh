@@ -1,6 +1,9 @@
-package pkg;
+package hust.soict.cs01.aims;
 
-public class CartTest {
+import hust.soict.cs01.aims.cart.Cart;
+import hust.soict.cs01.aims.disc.DigitalVideoDisc;
+
+public class Aims {
     public static void main(String[] args) {
         //Create cart named anOrder
         Cart anOrder = new Cart();
@@ -18,13 +21,9 @@ public class CartTest {
                 "Animation", 19.99f);
         anOrder.addDigitalVideoDisc(dvd3);
 
-        // Print method
-        anOrder.print();
+        anOrder.removeDigitalVideoDisc(dvd3);
 
-        //Search method
-        anOrder.searchID(2);
-        anOrder.searchTitle("Morbius 2: Morbing time");
-        anOrder.searchID(5);
-        anOrder.searchTitle("Aladiin");
+        //Get total cost
+        System.out.printf("Total cost is %.2f", anOrder.totalCost());
     }
 }
