@@ -10,6 +10,7 @@ public class Store {
     public void addDVD (DigitalVideoDisc disc) {
         if (dvdCount < storageSpace) {
             itemsInStore[dvdCount++] = disc;
+            System.out.printf("Added dics %s to store's inventory\n", disc.getTitle());
         } else {
             System.out.println("Store is full!");
         }
@@ -21,6 +22,7 @@ public class Store {
             if (itemsInStore[i] == disc) {
                 dvdCount--;
                 itemsInStore[i] = null;
+                System.out.printf("Removed dics %s from store's inventory\n", disc.getTitle());
                 break;
             }
         }
