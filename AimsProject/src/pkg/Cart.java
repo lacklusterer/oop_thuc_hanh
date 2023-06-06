@@ -42,6 +42,7 @@ public class Cart {
         return total;
     }
 
+    // print method
     public void print() {
         System.out.printf("""
                 ***********************CART***********************\s
@@ -54,5 +55,26 @@ public class Cart {
                 Total cost: %.2f$
                 ***************************************************
                 """, totalCost());
+    }
+
+    // Search methods
+    public void searchID(int id) {
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemsOrdered[i].getId() == id) {
+                System.out.println(itemsOrdered[i]);
+                return;
+            }
+        }
+        System.out.println("No match!");
+    }
+
+    public void searchTitle(String title) {
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemsOrdered[i].isMatch(title)) {
+                System.out.println(itemsOrdered[i]);
+                return;
+            }
+        }
+        System.out.println("No match!");
     }
 }
