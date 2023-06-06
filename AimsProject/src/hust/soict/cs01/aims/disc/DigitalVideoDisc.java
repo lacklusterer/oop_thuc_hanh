@@ -1,4 +1,4 @@
-package pkg;
+package hust.soict.cs01.aims.disc;
 public class DigitalVideoDisc {
     private String title;
     private String category;
@@ -71,5 +71,19 @@ public class DigitalVideoDisc {
     {
         nbDigitalVideoDiscs++;
         id = nbDigitalVideoDiscs;
+    }
+
+    public boolean isMatch(String title) {
+        return this.title == title;
+    }
+
+    @Override
+    public String toString() {
+        return "DVD - " +
+                title + " - " +
+                category + " - " +
+                director + " - " +
+                length + "mins : $" +
+                cost;
     }
 }
