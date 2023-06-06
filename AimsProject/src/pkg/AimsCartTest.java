@@ -18,6 +18,6 @@ public class AimsCartTest {
                 "Animation", 19.99f);
         anOrder.addDigitalVideoDisc(dvd3);
 
-        System.out.println(dvd1);
+        anOrder.print();
     }
 }
