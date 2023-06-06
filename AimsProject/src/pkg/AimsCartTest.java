@@ -18,6 +18,13 @@ public class AimsCartTest {
                 "Animation", 19.99f);
         anOrder.addDigitalVideoDisc(dvd3);
 
+        // Print method
         anOrder.print();
+
+        //Search method
+        anOrder.searchID(2);
+        anOrder.searchTitle("Morbius 2: Morbing time");
+        anOrder.searchID(5);
+        anOrder.searchTitle("Aladiin");
     }
 }

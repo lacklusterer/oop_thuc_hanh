@@ -73,6 +73,10 @@ public class DigitalVideoDisc {
         id = nbDigitalVideoDiscs;
     }
 
+    public boolean isMatch(String title) {
+        return this.title == title;
+    }
+
     @Override
     public String toString() {
         return "DVD - " +
