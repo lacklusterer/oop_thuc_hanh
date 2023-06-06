@@ -1,4 +1,4 @@
-package pkg;
+package hust.soict.cs01.aims.disc;
 public class DigitalVideoDisc {
     private String title;
     private String category;
