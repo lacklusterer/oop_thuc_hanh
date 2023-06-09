@@ -1,13 +1,20 @@
 package hust.soict.cs01.aims.media;
 
 public abstract class Media {
+    protected String title;
+    protected String category;
+    protected float cost;
+
     private int id;
-    private String title;
-    private String category;
-    private float cost;
+    private static int nbMedia = 0;
+
+    // Instance initializer
+    {
+        nbMedia++;
+        id = nbMedia;
+    }
 
     public Media(String title, String category, float cost) {
-        super();
         this.title = title;
         this.category = category;
         this.cost = cost;
