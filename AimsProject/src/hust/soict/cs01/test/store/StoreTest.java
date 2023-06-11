@@ -10,7 +10,7 @@ public class StoreTest {
         Store Store1 = new Store();
 
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("Obama: The Movie",
-                "Comedy", "Michael Bay", 180, 29.99f);
+                "Comedy", 29.99f, 180, "Michael Bay");
         Store1.addDVD(dvd1);
         Store1.removeDVD(dvd1);
     }

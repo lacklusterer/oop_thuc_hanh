@@ -4,8 +4,7 @@ public abstract class Media {
     protected String title;
     protected String category;
     protected float cost;
-
-    private int id;
+    protected int id;
     private static int nbMedia = 0;
 
     // Instance initializer
@@ -18,6 +17,10 @@ public abstract class Media {
         this.title = title;
         this.category = category;
         this.cost = cost;
+    }
+
+    public Media(String title) {
+        this.title = title;
     }
 
     public int getId() {
