@@ -1,6 +1,6 @@
 package hust.soict.cs01.aims.store;
 
-import hust.soict.cs01.aims.disc.DigitalVideoDisc;
+import hust.soict.cs01.aims.media.DigitalVideoDisc;
 
 public class Store {
     private int storageSpace = 200;
