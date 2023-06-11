@@ -19,6 +19,10 @@ public abstract class Media {
         this.cost = cost;
     }
 
+    public Media(String title) {
+        this.title = title;
+    }
+
     public int getId() {
         return id;
     }

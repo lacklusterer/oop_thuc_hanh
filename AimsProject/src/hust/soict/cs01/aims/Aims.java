@@ -10,11 +10,11 @@ public class Aims {
 
         //New dvd, add to cart
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("Obama: The Movie",
-                "Comedy", "Michael Bay", 180, 29.99f);
+                "Comedy", 29.99f, 180, "Michael Bay");
         anOrder.addDigitalVideoDisc(dvd1);
 
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Morbius 2: Morbing time",
-                "Action Comedy", "Daniel Espinosa", 165, 39.99f);
+                "Action Comedy", 39.99f, 165,  "Daniel Espinosa");
         anOrder.addDigitalVideoDisc(dvd2);
 
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin",
