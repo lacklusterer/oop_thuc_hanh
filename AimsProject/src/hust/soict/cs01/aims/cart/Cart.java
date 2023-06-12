@@ -1,41 +1,13 @@
 package hust.soict.cs01.aims.cart;
 
-import hust.soict.cs01.aims.media.DigitalVideoDisc;
+import hust.soict.cs01.aims.media.Media;
+
+import java.util.ArrayList;
 
 public class Cart {
-    public static final int MAX_NUMBERS_ORDERED = 20;
 
-    private DigitalVideoDisc itemsOrdered[] =
-            new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
-    private int qtyOrdered = 0;
-
-    public void addDigitalVideoDisc(DigitalVideoDisc disc) {
-        if (qtyOrdered < MAX_NUMBERS_ORDERED) {
-            itemsOrdered[qtyOrdered++] = disc;
-        } else {
-            System.out.println("Cart is full!");
-        }
-    }
-
-    public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList) {
-        for (var disc: dvdList) addDigitalVideoDisc(disc);
-    }
-
-    public void addDigitalVideoDisc(DigitalVideoDisc dvd1,DigitalVideoDisc dvd2) {
-        addDigitalVideoDisc(dvd1);
-        addDigitalVideoDisc(dvd2);
-    }
-
-    public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
-        for (int i = 0; i < qtyOrdered; i++) {
-            if (itemsOrdered[i] == disc) {
-                qtyOrdered--;
-                itemsOrdered[i] = null;
-                break;
-            }
-        }
-    }
-
+    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    /*
     public float totalCost() {
         float total = 0.0f;
         for (int i = 0; i < qtyOrdered; i++) {
@@ -43,7 +15,6 @@ public class Cart {
         }
         return total;
     }
-
     // print method
     public void print() {
         System.out.printf("""
@@ -79,4 +50,5 @@ public class Cart {
         }
         System.out.println("No match!");
     }
+    */
 }
