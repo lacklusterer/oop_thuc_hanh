@@ -1,0 +1,2 @@
+If the passing object is not an instance of Media, what happens?
+- A ClassCastException will be thrown
