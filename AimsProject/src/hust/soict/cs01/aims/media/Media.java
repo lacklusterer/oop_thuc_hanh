@@ -1,6 +1,15 @@
 package hust.soict.cs01.aims.media;
 
+import hust.soict.cs01.aims.comparators.MediaComparatorByCostTitle;
+import hust.soict.cs01.aims.comparators.MediaComparatorByTitleCost;
+
+import java.util.Comparator;
+
 public abstract class Media {
+
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByCostTitle();
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByTitleCost();
+
     protected String title;
     protected String category;
     protected float cost;

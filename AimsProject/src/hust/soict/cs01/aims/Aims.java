@@ -32,14 +32,16 @@ public class Aims {
         //Get total cost
         System.out.printf("Total cost is %.2f\n", anOrder.totalCost());
 
-        Book book1 = new Book("BookTitle", "BookCategory", 90f);
-        CompactDisc cd1 = new CompactDisc("CDNuts", "CDCategory", 90f, "NaN");
+        Book book1 = new Book("BookTitle", "BookCategory", 19.99f);
+        CompactDisc cd1 = new CompactDisc("CDNuts", "CDCategory", 39.99f, "NaN");
 
         List<Media> mediaList = new ArrayList<>();
 
         mediaList.add(book1);
         mediaList.add(cd1);
         mediaList.add(dvd1);
+
+        java.util.Collections.sort(mediaList,Media.COMPARE_BY_TITLE_COST);
 
         for (Media media : mediaList) {
             System.out.println(media.toString());
