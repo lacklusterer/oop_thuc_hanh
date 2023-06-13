@@ -25,4 +25,14 @@ public class Book extends Media{
             authors.remove(authorName);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "authors=" + authors +
+                ", title='" + title + '\'' +
+                ", category='" + category + '\'' +
+                ", cost=" + cost +
+                '}';
+    }
 }

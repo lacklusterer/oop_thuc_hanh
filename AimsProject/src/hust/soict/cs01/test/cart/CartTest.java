@@ -11,16 +11,17 @@ public class CartTest {
         //New dvd, add to cart
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("Obama: The Movie",
                 "Comedy", 29.99f, 180, "Michael Bay");
-        anOrder.addDigitalVideoDisc(dvd1);
+        anOrder.addMedia(dvd1);
 
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Morbius 2: Morbing time",
                 "Action Comedy", 39.99f, 165, "Daniel Espinosa");
-        anOrder.addDigitalVideoDisc(dvd2);
+        anOrder.addMedia(dvd2);
 
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin",
                 "Animation", 19.99f);
-        anOrder.addDigitalVideoDisc(dvd3);
+        anOrder.addMedia(dvd3);
 
+        /*
         // Print method
         anOrder.print();
 
@@ -29,5 +30,6 @@ public class CartTest {
         anOrder.searchTitle("Morbius 2: Morbing time");
         anOrder.searchID(5);
         anOrder.searchTitle("Aladiin");
+        */
     }
 }
