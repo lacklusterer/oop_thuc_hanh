@@ -2,6 +2,8 @@ package hust.soict.cs01.swing;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class NumberGrid extends JFrame {
     private JButton[] btnNumbers = new JButton[10];
@@ -13,7 +15,7 @@ public class NumberGrid extends JFrame {
         tfDisplay.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 
         JPanel panelButtons = new JPanel(new GridLayout(4, 3));
-        //addButtons(panelButtons);
+        addButtons(panelButtons);
 
         Container cp = getContentPane();
         cp.setLayout(new BorderLayout());
@@ -24,5 +26,33 @@ public class NumberGrid extends JFrame {
         setTitle("Number Grid");
         setSize(200, 200);
         setVisible(true);
+    }
+
+    void addButtons(JPanel panelButtons) {
+        ButtonListener btnListener = new ButtonListener();
+        for (int i = 1; i <= 9; i++) {
+            btnNumbers[i] = new JButton(""+i);
+            panelButtons.add(btnNumbers[i]);
+            btnNumbers[i].addActionListener(btnListener);
+        }
+
+        btnDelete = new JButton("DEL");
+        panelButtons.add(btnDelete);
+        btnDelete.addActionListener(btnListener);
+
+        btnNumbers[0] = new JButton("0");
+        panelButtons.add(btnNumbers[0]);
+        btnNumbers[0].addActionListener(btnListener);
+
+        btnReset = new JButton("C");
+        panelButtons.add(btnReset);
+        btnReset.addActionListener(btnListener);
+    }
+
+    private class ButtonListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
     }
 }
