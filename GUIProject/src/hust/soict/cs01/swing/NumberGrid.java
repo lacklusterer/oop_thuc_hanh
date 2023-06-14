@@ -52,7 +52,24 @@ public class NumberGrid extends JFrame {
     private class ButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            String button = e.getActionCommand();
+            if (button.charAt(0) >= '0' && button.charAt(0) <= '9') {
+                tfDisplay.setText(tfDisplay.getText() + button);
+            } else if (button.equals("DEL")) {
+                // "DEL" case
+                String text = tfDisplay.getText();
+                if (text.length() > 0) {
+                    String newText = text.substring(0, text.length() - 1);
+                    tfDisplay.setText(newText);
+                }
+            } else {
+                // "C" case
+                tfDisplay.setText("");
+            }
         }
+    }
+
+    public static void main(String[] args) {
+        new NumberGrid();
     }
 }
