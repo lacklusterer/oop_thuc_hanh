@@ -50,13 +50,11 @@ public class CompactDisc extends Disc implements Playable{
 
     @Override
     public String toString() {
-        return "CD{" +
-                "artist='" + artist + '\'' +
-                ", length=" + length +
-                ", director='" + director + '\'' +
-                ", title='" + title + '\'' +
-                ", category='" + category + '\'' +
+        return "CD\n" +
+                "title='" + title + '\'' +
                 ", cost=" + cost +
-                '}';
+                ", category='" + category + '\'' +
+                ", artist='" + artist + '\'' +
+                ", length=" + length;
     }
 }

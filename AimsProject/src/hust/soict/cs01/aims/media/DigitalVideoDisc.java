@@ -19,7 +19,7 @@ public class DigitalVideoDisc extends Disc implements Playable{
         return this.getTitle() == title;
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "DVD - " +
                 title + " - " +
@@ -27,6 +27,17 @@ public class DigitalVideoDisc extends Disc implements Playable{
                 director + " - " +
                 length + "mins : $" +
                 cost;
+    }
+    */
+
+    @Override
+    public String toString() {
+        return "DigitalVideoDisc\n" +
+                "title='" + title + '\'' +
+                ", cost=" + cost +
+                ", category='" + category + '\'' +
+                ", director='" + director + '\'' +
+                ", length=" + length;
     }
 
     @Override

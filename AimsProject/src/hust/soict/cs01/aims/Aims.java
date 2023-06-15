@@ -41,7 +41,7 @@ public class Aims {
         mediaList.add(cd1);
         mediaList.add(dvd1);
 
-        java.util.Collections.sort(mediaList,Media.COMPARE_BY_TITLE_COST);
+        mediaList.sort(Media.COMPARE_BY_COST_TITLE);
 
         for (Media media : mediaList) {
             System.out.println(media.toString());
