@@ -1,6 +1,5 @@
 package hust.soict.cs01.aims.store;
 
-import hust.soict.cs01.aims.media.DigitalVideoDisc;
 import hust.soict.cs01.aims.media.Media;
 
 import java.util.ArrayList;
@@ -27,5 +26,9 @@ public class Store {
         } else {
             System.out.println("Media not found");
         }
+    }
+
+    public void displayMenu() {
+
     }
 }
