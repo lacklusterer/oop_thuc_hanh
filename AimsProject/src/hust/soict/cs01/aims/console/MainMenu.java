@@ -21,7 +21,6 @@ public class MainMenu extends BaseMenu {
 
     @Override
     public void processOption() {
-        super.processOption();
         int choice = scanner.nextInt();
         switch (choice) {
             case 0 -> running = false; // Set running to false which exits the loop

@@ -3,18 +3,19 @@ package hust.soict.cs01.aims.console;
 import java.util.List;
 import java.util.Scanner;
 
-public class BaseMenu {
+public abstract class BaseMenu {
     protected Scanner scanner = new Scanner(System.in);
     protected boolean running = true;
 
     // Show menu method
     public void showMenu(List<String> options, String menuName) {
         while (running) {
-            String separator = "--------------------------------";
+
+            System.out.print("\033[H\033[2J"); // Clear screen
+            System.out.flush();
 
             // title
-            System.out.println(menuName);
-            System.out.println(separator);
+            System.out.println(menuName + "\n--------------------------------");
 
             // options
             StringBuilder guideText = new StringBuilder("Please choose a number: 0");
@@ -24,12 +25,12 @@ public class BaseMenu {
             }
 
             // separator + guide
-            System.out.print("\n" + "0. Back" + "\n" + separator + "\n" + guideText + "\n");
+            System.out.print("\n" + "0. Back" + "\n" + "--------------------------------" + "\n" + guideText + "\n");
 
             // process
             processOption();
         }
     }
 
-    public void processOption() {}
+    public abstract void processOption();
 }
