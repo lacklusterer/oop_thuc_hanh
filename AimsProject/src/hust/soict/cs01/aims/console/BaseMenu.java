@@ -5,12 +5,17 @@ import java.util.Scanner;
 
 public abstract class BaseMenu {
     protected Scanner scanner = new Scanner(System.in);
-    protected boolean running = true;
+
+    private boolean running = true;
+    public void exit() {running = false;}
+
+    public abstract void processOption();
 
     // Show menu method
     public void showMenu(List<String> options, String menuName) {
         while (running) {
 
+            // clear console
             System.out.print("\033[H\033[2J"); // Clear screen
             System.out.flush();
 
@@ -31,6 +36,4 @@ public abstract class BaseMenu {
             processOption();
         }
     }
-
-    public abstract void processOption();
 }

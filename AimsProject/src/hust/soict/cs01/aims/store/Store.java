@@ -28,7 +28,25 @@ public class Store {
         }
     }
 
-    public void displayMenu() {
+    public void searchTitle(String title) {
+        for (Media item : itemsInStore) {
+            if (item.isMatch(title)) {
+                System.out.println(item);
+                return;
+            }
+        }
+        System.out.println("No match!");
+    }
 
+    public void print() {
+        System.out.print("""
+                ***********************Store**********************\s
+                Ordered Items:
+                """);
+        int i = 0;
+        for (Media item : itemsInStore) {
+            System.out.printf("%d. %s\n", i + 1, item.toString());
+            i++;
+        }
     }
 }

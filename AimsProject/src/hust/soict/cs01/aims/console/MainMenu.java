@@ -23,7 +23,7 @@ public class MainMenu extends BaseMenu {
     public void processOption() {
         int choice = scanner.nextInt();
         switch (choice) {
-            case 0 -> running = false; // Set running to false which exits the loop
+            case 0 -> exit(); // Set running to false which exits the loop
             case 1 -> {
                 // View store
                 System.out.println("View store");
