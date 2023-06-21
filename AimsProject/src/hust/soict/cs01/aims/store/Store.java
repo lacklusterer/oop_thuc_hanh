@@ -3,6 +3,7 @@ package hust.soict.cs01.aims.store;
 import hust.soict.cs01.aims.media.Media;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Store {
     private int storageSpace = 200;
@@ -16,6 +17,10 @@ public class Store {
         } else {
             System.out.println("Store is full!");
         }
+    }
+
+    public void addMedia (Media ... medias) {
+        itemsInStore.addAll(Arrays.asList(medias));
     }
 
     // Remove dvd method
@@ -44,8 +49,8 @@ public class Store {
                 Ordered Items:
                 """);
         int i = 0;
-        for (Media item : itemsInStore) {
-            System.out.printf("%d. %s\n", i + 1, item.toString());
+        for (Media media : itemsInStore) {
+            System.out.printf("%d. %s\n", i + 1, media.toString());
             i++;
         }
     }
