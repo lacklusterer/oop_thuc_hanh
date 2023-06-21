@@ -53,5 +53,6 @@ public class Store {
             System.out.printf("%d. %s\n", i + 1, media.toString());
             i++;
         }
+        System.out.println("***************************************************");
     }
 }

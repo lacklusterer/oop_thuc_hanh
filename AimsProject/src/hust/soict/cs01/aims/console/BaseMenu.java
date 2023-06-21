@@ -1,39 +1,49 @@
 package hust.soict.cs01.aims.console;
 
+import hust.soict.cs01.aims.cart.Cart;
+import hust.soict.cs01.aims.store.Store;
+
 import java.util.List;
 import java.util.Scanner;
 
 public abstract class BaseMenu {
     protected Scanner scanner = new Scanner(System.in);
+    protected List<String> options;
+    protected String backMessage;
+    public Store store;
+    public Cart cart;
+
+    // constructor
+    public BaseMenu(Store store, Cart cart) {
+        this.store = store;
+        this.cart = cart;
+    }
 
     private boolean running = true;
-    public void exit() {running = false;}
 
-    public abstract void processOption();
+    // methods
+    public void exit() {running = false;}
+    public abstract void showInfo();
+    public abstract void processOption(int choice);
 
     // Show menu method
-    public void showMenu(List<String> options, String menuName) {
+    public void showMenu() {
         while (running) {
+            showInfo(); // show info (menu name + menu-specific info)
 
-            // clear console
-            System.out.print("\033[H\033[2J"); // Clear screen
-            System.out.flush();
+            System.out.println("--------------------------------"); // separator
 
-            // title
-            System.out.println(menuName + "\n--------------------------------");
-
-            // options
-            StringBuilder guideText = new StringBuilder("Please choose a number: 0");
+            StringBuilder guideText = new StringBuilder("Please choose a number: 0"); // show options
             for (int i = 1; i <= options.size(); i++) {
                 System.out.printf(i + ". " + options.get(i - 1) + "\n");
                 guideText.append("-").append(i);
             }
 
-            // separator + guide
-            System.out.print("\n" + "0. Back" + "\n" + "--------------------------------" + "\n" + guideText + "\n");
+            System.out.print("\n" + "0. " + backMessage + "\n" +
+                    "--------------------------------" + "\n" + guideText + "\n"); // separator + guide
 
-            // process
-            processOption();
+            int choice = scanner.nextInt();
+            processOption(choice); // process choice
         }
     }
 }
