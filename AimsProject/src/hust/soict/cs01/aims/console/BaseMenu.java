@@ -3,6 +3,7 @@ package hust.soict.cs01.aims.console;
 import hust.soict.cs01.aims.cart.Cart;
 import hust.soict.cs01.aims.store.Store;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -42,8 +43,20 @@ public abstract class BaseMenu {
             System.out.print("\n" + "0. " + backMessage + "\n" +
                     "--------------------------------" + "\n" + guideText + "\n"); // separator + guide
 
-            int choice = scanner.nextInt();
-            processOption(choice); // process choice
+            try {
+                int choice = scanner.nextInt();
+                if (choice == 0) {
+                    exit();
+                } else if (choice > 0 && choice <= options.size()) {
+                    processOption(choice);
+                } else {
+                    System.out.println("Invalid input.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input.");
+                scanner.next(); // Clear the non-integer input from the scanner
+            }
+
         }
     }
 }

@@ -23,10 +23,11 @@ public class MainMenu extends BaseMenu {
     @Override
     public void processOption(int choice) {
         switch (choice) {
-            case 0 -> exit(); // exits
+            // exits
             case 1 -> {
                 // View store
                 store.print();
+                // enters store menu
             }
             case 2 -> {
                 // Update store
@@ -34,7 +35,8 @@ public class MainMenu extends BaseMenu {
             }
             case 3 -> {
                 // Print cart
-                System.out.println("Print cart");
+                cart.print();
+                // display CartMenu
             }
         }
     }
