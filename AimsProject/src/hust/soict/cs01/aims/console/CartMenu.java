@@ -29,12 +29,14 @@ public class CartMenu extends BaseMenu{
             case 1 -> {
                 System.out.println("Filter medias in cart by (1) id or (2) title?");
                 int sortType = scanner.nextInt();
+                scanner.nextLine(); // consumes newline character
                 if (sortType == 1) {
                     System.out.println("Enter media's id: ");
                     cart.searchById(scanner.nextInt());
                 } else if (sortType == 2) {
                     System.out.println("Enter media's title: ");
-                    cart.searchByTitle(scanner.nextLine());
+                    String title = scanner.nextLine();
+                    cart.searchByTitle(title.trim());
                 } else {
                     System.out.println("Invalid input");
                 }

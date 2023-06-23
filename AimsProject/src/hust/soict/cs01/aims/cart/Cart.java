@@ -38,6 +38,7 @@ public class Cart {
     public void searchById(int id) {
         for (Media item : itemsOrdered) {
             if (item.getId() == id) {
+                System.out.println("Found media!");
                 System.out.println(item);
                 return;
             }
@@ -48,6 +49,7 @@ public class Cart {
     public void searchByTitle(String title) {
         for (Media item : itemsOrdered) {
             if (item.isMatch(title)) {
+                System.out.println("Found media!");
                 System.out.println(item);
                 return;
             }

@@ -20,6 +20,8 @@ public class ConsoleTest {
 
         store1.addMedia(dvd1, dvd2, dvd3, book1, cd1);
 
+        cart1.addMedia(dvd1);
+
         MainMenu mainMenu = new MainMenu(store1, cart1);
         mainMenu.showMenu();
     }

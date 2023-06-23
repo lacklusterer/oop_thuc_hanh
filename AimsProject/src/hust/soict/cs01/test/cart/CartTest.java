@@ -8,10 +8,13 @@ import hust.soict.cs01.aims.media.Media;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class CartTest {
     public static void main(String[] args) {
         Cart anOrder = new Cart();
+
+        Scanner scanner = new Scanner(System.in);
 
         //New dvd, add to cart
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("Obama: The Movie", "Comedy", 29.99f, 180, "Michael Bay");
@@ -21,20 +24,21 @@ public class CartTest {
         anOrder.addMedia(dvd2);
         anOrder.addMedia(dvd3);
 
-        //Get total cost
-        System.out.printf("Total cost is %.2f\n", anOrder.totalCost());
+        // Get total cost
+        // System.out.printf("Total cost is %.2f\n", anOrder.totalCost());
 
-        // Print method test
-        anOrder.print();
+        anOrder.print(); // Print method test
 
         //Search method test
-        anOrder.searchById(2);
+        //anOrder.searchById(2);
         anOrder.searchByTitle("Morbius 2: Morbing time");
-        anOrder.searchById(5);
+        //anOrder.searchById(5);
         anOrder.searchByTitle("Aladiin");
+        anOrder.searchByTitle(scanner.nextLine());
 
 
         // Sort comparator test
+        /*
         List<Media> mediaList = new ArrayList<>();
 
         Book book1 = new Book("BookTitle", "BookCategory", 19.99f);
@@ -49,5 +53,6 @@ public class CartTest {
         for (Media media : mediaList) {
             System.out.println(media.toString());
         }
+        */
     }
 }
