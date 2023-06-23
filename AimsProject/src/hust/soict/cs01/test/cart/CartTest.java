@@ -28,10 +28,10 @@ public class CartTest {
         anOrder.print();
 
         //Search method test
-        anOrder.searchID(2);
-        anOrder.searchTitle("Morbius 2: Morbing time");
-        anOrder.searchID(5);
-        anOrder.searchTitle("Aladiin");
+        anOrder.searchById(2);
+        anOrder.searchByTitle("Morbius 2: Morbing time");
+        anOrder.searchById(5);
+        anOrder.searchByTitle("Aladiin");
 
 
         // Sort comparator test

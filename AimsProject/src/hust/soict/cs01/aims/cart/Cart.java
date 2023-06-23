@@ -5,7 +5,6 @@ import hust.soict.cs01.aims.media.Media;
 import java.util.ArrayList;
 
 public class Cart {
-
     public static final int MAX_NUMBERS_ORDERED = 20;
     private ArrayList<Media> itemsOrdered = new ArrayList<>();
 
@@ -36,7 +35,7 @@ public class Cart {
     }
 
     // Search methods
-    public void searchID(int id) {
+    public void searchById(int id) {
         for (Media item : itemsOrdered) {
             if (item.getId() == id) {
                 System.out.println(item);
@@ -46,7 +45,7 @@ public class Cart {
         System.out.println("No match!");
     }
 
-    public void searchTitle(String title) {
+    public void searchByTitle(String title) {
         for (Media item : itemsOrdered) {
             if (item.isMatch(title)) {
                 System.out.println(item);

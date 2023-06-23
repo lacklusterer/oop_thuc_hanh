@@ -45,18 +45,19 @@ public abstract class BaseMenu {
             System.out.print("\n" + "0. " + backMessage + "\n" +
                     "--------------------------------" + "\n" + guideText + "\n"); // separator + guide
 
+            // process choice
             try {
                 int choice = scanner.nextInt();
                 if (choice == 0) {
                     exit();
                 } else if (choice > 0 && choice <= options.size()) {
-                    processChoice(choice); // process choice
+                    processChoice(choice);
                 } else {
                     System.out.println("Invalid input.");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input.");
-                scanner.next(); // Clear the non-integer input from the scanner
+                scanner.next();
             }
         }
     }

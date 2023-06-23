@@ -26,18 +26,15 @@ public class MainMenu extends BaseMenu {
         switch (choice) {
             // exits
             case 1 -> {
-                // View store
-                store.print();
+                store.print(); // stub
                 // enters store menu
             }
             case 2 -> {
-                // Update store
-                System.out.println("Update store");
+                System.out.println("Update store"); // stub
             }
             case 3 -> {
                 CartMenu cartMenu = new CartMenu(store, cart);
-                cartMenu.showMenu();
-                // display CartMenu
+                cartMenu.showMenu(); // display CartMenu
             }
         }
     }

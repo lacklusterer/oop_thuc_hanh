@@ -27,8 +27,17 @@ public class CartMenu extends BaseMenu{
     public void processChoice(int choice) {
         switch (choice) {
             case 1 -> {
-                System.out.println("Filter media");
-                // use search function
+                System.out.println("Filter medias in cart by (1) id or (2) title?");
+                int sortType = scanner.nextInt();
+                if (sortType == 1) {
+                    System.out.println("Enter media's id: ");
+                    cart.searchById(scanner.nextInt());
+                } else if (sortType == 2) {
+                    System.out.println("Enter media's title: ");
+                    cart.searchByTitle(scanner.nextLine());
+                } else {
+                    System.out.println("Invalid input");
+                }
             }
 
             case 2 -> {
