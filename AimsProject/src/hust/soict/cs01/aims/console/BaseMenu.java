@@ -10,7 +10,8 @@ import java.util.Scanner;
 public abstract class BaseMenu {
     protected Scanner scanner = new Scanner(System.in);
     protected List<String> options;
-    protected String backMessage;
+    protected String menuName = "Options";
+    protected String backMessage = "Back";
     public Store store;
     public Cart cart;
 
@@ -25,13 +26,14 @@ public abstract class BaseMenu {
     // methods
     public void exit() {running = false;}
     public abstract void showInfo();
-    public abstract void processOption(int choice);
+    public abstract void processChoice(int choice);
 
     // Show menu method
     public void showMenu() {
         while (running) {
-            showInfo(); // show info (menu name + menu-specific info)
+            showInfo(); // show menu-specific info
 
+            System.out.println(menuName);
             System.out.println("--------------------------------"); // separator
 
             StringBuilder guideText = new StringBuilder("Please choose a number: 0"); // show options
@@ -48,7 +50,7 @@ public abstract class BaseMenu {
                 if (choice == 0) {
                     exit();
                 } else if (choice > 0 && choice <= options.size()) {
-                    processOption(choice);
+                    processChoice(choice); // process choice
                 } else {
                     System.out.println("Invalid input.");
                 }
@@ -56,7 +58,6 @@ public abstract class BaseMenu {
                 System.out.println("Invalid input.");
                 scanner.next(); // Clear the non-integer input from the scanner
             }
-
         }
     }
 }

@@ -56,6 +56,14 @@ public class Cart {
         System.out.println("No match!");
     }
 
+    public void sortByTitleCost() {
+        itemsOrdered.sort(Media.COMPARE_BY_TITLE_COST);
+    }
+
+    public void sortByCostTitle() {
+        itemsOrdered.sort(Media.COMPARE_BY_COST_TITLE);
+    }
+
     public void print() {
         System.out.print("""
                 ***********************CART***********************\s

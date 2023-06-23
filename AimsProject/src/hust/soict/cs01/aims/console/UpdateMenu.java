@@ -23,7 +23,7 @@ public class UpdateMenu extends BaseMenu {
     }
 
     @Override
-    public void processOption(int choice) {
+    public void processChoice(int choice) {
         switch (choice) {
             case 1 -> {
                 // add media

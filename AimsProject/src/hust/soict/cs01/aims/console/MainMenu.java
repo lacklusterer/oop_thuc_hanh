@@ -11,17 +11,18 @@ public class MainMenu extends BaseMenu {
         this.options = Arrays.asList(
                 "View store",
                 "Update store",
-                "See current cart");
+                "See current cart"
+        );
     }
 
     @Override
     public void showInfo() {
-        System.out.println("Aims");
+        menuName = "Aims";
         backMessage = "Exit";
     }
 
     @Override
-    public void processOption(int choice) {
+    public void processChoice(int choice) {
         switch (choice) {
             // exits
             case 1 -> {
@@ -34,8 +35,8 @@ public class MainMenu extends BaseMenu {
                 System.out.println("Update store");
             }
             case 3 -> {
-                // Print cart
-                cart.print();
+                CartMenu cartMenu = new CartMenu(store, cart);
+                cartMenu.showMenu();
                 // display CartMenu
             }
         }
