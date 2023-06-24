@@ -1,6 +1,7 @@
 package hust.soict.cs01.aims.console;
 
 import hust.soict.cs01.aims.cart.Cart;
+import hust.soict.cs01.aims.media.Media;
 import hust.soict.cs01.aims.store.Store;
 
 import java.util.Arrays;
@@ -28,15 +29,22 @@ public class CartMenu extends BaseMenu{
         switch (choice) {
             case 1 -> {
                 System.out.println("Filter medias in cart by (1) id or (2) title?");
-                int sortType = scanner.nextInt();
+                int searchType = scanner.nextInt();
                 scanner.nextLine(); // consumes newline character
-                if (sortType == 1) {
+                if (searchType == 1) {
                     System.out.println("Enter media's id: ");
                     cart.searchById(scanner.nextInt());
-                } else if (sortType == 2) {
+                } else if (searchType == 2) {
                     System.out.println("Enter media's title: ");
                     String title = scanner.nextLine();
-                    cart.searchByTitle(title.trim());
+                    Media foundMedia = cart.searchByTitle(title.trim());
+                    if (foundMedia != null) {
+                        System.out.println("Found media!");
+                        System.out.println(foundMedia);
+                    } else {
+                        System.out.println("No match!");
+                    }
+
                 } else {
                     System.out.println("Invalid input");
                 }

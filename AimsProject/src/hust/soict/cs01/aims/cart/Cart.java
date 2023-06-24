@@ -45,7 +45,7 @@ public class Cart {
         }
         System.out.println("No match!");
     }
-
+/*
     public void searchByTitle(String title) {
         for (Media item : itemsOrdered) {
             if (item.isMatch(title)) {
@@ -56,6 +56,16 @@ public class Cart {
         }
         System.out.println("No match!");
     }
+*/
+public Media searchByTitle(String title) {
+    for (Media media : itemsOrdered) {
+        if (media.isMatch(title)) {
+            return media;
+        }
+    }
+    return null; // No match found
+}
+
 
     public void sortByTitleCost() {
         itemsOrdered.sort(Media.COMPARE_BY_TITLE_COST);

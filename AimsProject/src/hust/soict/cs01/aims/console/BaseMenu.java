@@ -57,9 +57,6 @@ public abstract class BaseMenu {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a number between 1 and " + options.size() + ".");
-            } finally {
-                scanner.nextLine();
-                scanner.close();
             }
         }
     }
