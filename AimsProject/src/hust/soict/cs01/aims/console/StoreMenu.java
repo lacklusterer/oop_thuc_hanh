@@ -5,36 +5,36 @@ import hust.soict.cs01.aims.store.Store;
 
 import java.util.Arrays;
 
-public class MainMenu extends BaseMenu {
-    public MainMenu(Store store, Cart cart) {
+public class StoreMenu extends BaseMenu{
+    public StoreMenu(Store store, Cart cart) {
         super(store, cart);
         this.options = Arrays.asList(
-                "View store",
-                "Update store",
+                "See a media’s details",
+                "Add a media to cart",
+                "Play a media",
                 "See current cart"
         );
     }
 
     @Override
     public void showInfo() {
-        menuName = "Aims";
-        backMessage = "Exit";
+        store.print();
     }
 
     @Override
     public void processChoice(int choice) {
         switch (choice) {
             case 1 -> {
-                StoreMenu storeMenu = new StoreMenu(store, cart);
-                storeMenu.showMenu();
+                // Option 1
             }
             case 2 -> {
-                UpdateMenu updateMenu = new UpdateMenu(store, cart);
-                updateMenu.showMenu();
+                // option 2
             }
             case 3 -> {
-                CartMenu cartMenu = new CartMenu(store, cart);
-                cartMenu.showMenu();
+                // option 3
+            }
+            case 4 -> {
+                // option 4
             }
         }
     }
