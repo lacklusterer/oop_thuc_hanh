@@ -53,11 +53,13 @@ public abstract class BaseMenu {
                 } else if (choice > 0 && choice <= options.size()) {
                     processChoice(choice);
                 } else {
-                    System.out.println("Invalid input.");
+                    System.out.println("Invalid input. Please enter a number between 1 and " + options.size() + ".");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Invalid input.");
-                scanner.next();
+                System.out.println("Invalid input. Please enter a number between 1 and " + options.size() + ".");
+            } finally {
+                scanner.nextLine();
+                scanner.close();
             }
         }
     }
