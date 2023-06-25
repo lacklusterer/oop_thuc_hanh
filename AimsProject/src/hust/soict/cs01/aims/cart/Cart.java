@@ -20,7 +20,6 @@ public class Cart {
     public void removeMedia(Media media) {
         if (itemsOrdered.contains(media)) {
             itemsOrdered.remove(media);
-            System.out.printf("Removed media %s from cart\n", media.getTitle());
         } else {
             System.out.println("Media not found");
         }
@@ -57,15 +56,18 @@ public class Cart {
         System.out.println("No match!");
     }
 */
-public Media searchByTitle(String title) {
-    for (Media media : itemsOrdered) {
-        if (media.isMatch(title)) {
-            return media;
+    public Media searchByTitle(String title) {
+        for (Media media : itemsOrdered) {
+            if (media.isMatch(title)) {
+                return media;
+            }
         }
+        return null; // No match found
     }
-    return null; // No match found
-}
 
+    public void placeOrder() {
+        itemsOrdered.clear();
+    }
 
     public void sortByTitleCost() {
         itemsOrdered.sort(Media.COMPARE_BY_TITLE_COST);

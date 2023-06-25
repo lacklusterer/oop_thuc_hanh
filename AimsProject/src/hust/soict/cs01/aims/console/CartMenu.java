@@ -2,6 +2,7 @@ package hust.soict.cs01.aims.console;
 
 import hust.soict.cs01.aims.cart.Cart;
 import hust.soict.cs01.aims.media.Media;
+import hust.soict.cs01.aims.media.Playable;
 import hust.soict.cs01.aims.store.Store;
 
 import java.util.Arrays;
@@ -33,15 +34,12 @@ public class CartMenu extends BaseMenu{
                 if (searchType == 1) {
                     System.out.println("Enter media's id: ");
                     cart.searchById(Integer.parseInt(scanner.nextLine()));
+                    // TODO: handle case where user input cannot be turned into an int
                 } else if (searchType == 2) {
-                    System.out.println("Enter media's title: ");
-                    String title = scanner.nextLine();
-                    Media foundMedia = cart.searchByTitle(title.trim());
+                    Media foundMedia = promptUser4Media();
                     if (foundMedia != null) {
                         System.out.println("Found media!");
                         System.out.println(foundMedia);
-                    } else {
-                        System.out.println("No match!");
                     }
 
                 } else {
@@ -51,34 +49,43 @@ public class CartMenu extends BaseMenu{
 
             case 2 -> {
                 System.out.println("Sort medias in cart by (1) title-cost or (2) cost title?");
-                int sortType = Integer.parseInt(scanner.nextLine());
-                if (sortType == 1) {
-                    cart.sortByTitleCost();
-                    System.out.println("Sorted by title-cost");
-                } else if (sortType == 2) {
-                    cart.sortByCostTitle();
-                    System.out.println("Sorted by cost-title");
-                } else {
-                    System.out.println("Invalid input");
+
+                try {
+                    int sortType = Integer.parseInt(scanner.nextLine());
+                    if (sortType == 1) {
+                        cart.sortByTitleCost();
+                        System.out.println("Sorted by title-cost");
+                    } else if (sortType == 2) {
+                        cart.sortByCostTitle();
+                        System.out.println("Sorted by cost-title");
+                    } else {
+                        System.out.println("Invalid input");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input. Please enter a number between 1 and " + options.size() + ".");
                 }
             }
 
             case 3 -> {
-                System.out.println("Enter media's title: ");
-                String title = scanner.nextLine();
-                Media mediaToRemove = cart.searchByTitle(title);
+                Media mediaToRemove = promptUser4Media();
                 if (mediaToRemove != null) {
-                    cart.removeMedia(mediaToRemove);
-                    System.out.printf("Removed %s from cart\n", title);
-                } else {
-                    System.out.println("No match!");
+                    try {
+                        cart.removeMedia(mediaToRemove);
+                        System.out.printf("Removed %s from cart\n", mediaToRemove.getTitle());
+                    } catch (NullPointerException ignored) {}
                 }
             }
 
             case 4 -> {
-                System.out.println("Play a media");
+                Playable media2Play = (Playable) promptUser4Media();
+                try {
+                    media2Play.play();
+                } catch (NullPointerException ignored) {}
             }
 
+            case 5 -> {
+                cart.placeOrder();
+            }
         }
     }
 }

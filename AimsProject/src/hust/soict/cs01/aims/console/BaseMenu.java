@@ -1,9 +1,9 @@
 package hust.soict.cs01.aims.console;
 
 import hust.soict.cs01.aims.cart.Cart;
+import hust.soict.cs01.aims.media.Media;
 import hust.soict.cs01.aims.store.Store;
 
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -25,6 +25,17 @@ public abstract class BaseMenu {
 
     // methods
     public void exit() {running = false;}
+    public Media promptUser4Media() {
+        System.out.println("Enter media's title: ");
+        String title = scanner.nextLine();
+        Media foundMedia = cart.searchByTitle(title.trim());
+        if (foundMedia == null) {
+            System.out.println("No match!");
+        }
+        return foundMedia;
+    }
+
+        // abstract methods
     public abstract void showInfo();
     public abstract void processChoice(int choice);
 
@@ -55,7 +66,7 @@ public abstract class BaseMenu {
                 } else {
                     System.out.println("Invalid input. Please enter a number between 1 and " + options.size() + ".");
                 }
-            } catch (InputMismatchException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Invalid input. Please enter a number between 1 and " + options.size() + ".");
             }
         }
