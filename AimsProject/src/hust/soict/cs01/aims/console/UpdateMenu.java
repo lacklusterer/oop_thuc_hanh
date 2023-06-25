@@ -21,8 +21,7 @@ public class UpdateMenu extends BaseMenu {
     @Override
     public void processChoice(int choice) {
         switch (choice) {
-            case 1 -> {
-            }
+            case 1 -> new AddMediaMenu(this).showMenu();
             case 2 -> {
                 Media mediaToRemove = promptUser4Media(store);
                 if (mediaToRemove != null) {

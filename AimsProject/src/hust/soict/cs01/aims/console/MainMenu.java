@@ -25,18 +25,9 @@ public class MainMenu extends BaseMenu {
     @Override
     public void processChoice(int choice) {
         switch (choice) {
-            case 1 -> {
-                StoreMenu storeMenu = new StoreMenu(this);
-                storeMenu.showMenu();
-            }
-            case 2 -> {
-                UpdateMenu updateMenu = new UpdateMenu(this);
-                updateMenu.showMenu();
-            }
-            case 3 -> {
-                CartMenu cartMenu = new CartMenu(this);
-                cartMenu.showMenu();
-            }
+            case 1 -> new StoreMenu(this).showMenu();
+            case 2 -> new UpdateMenu(this).showMenu();
+            case 3 -> new CartMenu(this).showMenu();
         }
     }
 }

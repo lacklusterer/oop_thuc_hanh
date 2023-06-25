@@ -49,10 +49,7 @@ public class StoreMenu extends BaseMenu{
                     playableMedia.play();
                 } catch (NullPointerException ignored) {}
             }
-            case 4 -> {
-                CartMenu cartMenu = new CartMenu(this);
-                cartMenu.showMenu();
-            }
+            case 4 -> new CartMenu(this).showMenu();
         }
     }
 }
