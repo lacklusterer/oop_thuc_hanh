@@ -1,7 +1,6 @@
 package hust.soict.cs01.aims.console;
 
-import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
-import hust.soict.cs01.aims.mediaconcontainer.store.Store;
+import hust.soict.cs01.aims.media.Media;
 
 import java.util.Arrays;
 
@@ -17,18 +16,18 @@ public class UpdateMenu extends BaseMenu {
 
     @Override
     public void showInfo() {
-        System.out.println("Options");
-        backMessage = "Back";
     }
 
     @Override
     public void processChoice(int choice) {
         switch (choice) {
             case 1 -> {
-                // add media
             }
             case 2 -> {
-                // remove media
+                Media mediaToRemove = promptUser4Media(store);
+                if (mediaToRemove != null) {
+                    store.removeMedia(mediaToRemove);
+                }
             }
         }
     }
