@@ -7,8 +7,8 @@ import java.util.Arrays;
 
 public class UpdateMenu extends BaseMenu {
 
-    public UpdateMenu(Store store, Cart cart) {
-        super(store, cart);
+    public UpdateMenu(BaseMenu menu) {
+        super(menu);
         this.options = Arrays.asList(
                 "Add media",
                 "Remove media"

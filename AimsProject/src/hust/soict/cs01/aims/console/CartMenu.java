@@ -9,8 +9,8 @@ import java.util.Arrays;
 
 public class CartMenu extends BaseMenu{
 
-    public CartMenu(Store store, Cart cart) {
-        super(store, cart);
+    public CartMenu(BaseMenu menu) {
+        super(menu);
         this.options = Arrays.asList(
                 "Filter medias in cart",
                 "Sort medias in cart",

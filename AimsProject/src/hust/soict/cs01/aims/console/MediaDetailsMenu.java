@@ -7,8 +7,8 @@ import java.util.Arrays;
 
 public class MediaDetailsMenu extends BaseMenu { // enter from StoreMenu - option 1
 
-    public MediaDetailsMenu(Store store, Cart cart) {
-        super(store, cart);
+    public MediaDetailsMenu(BaseMenu menu) {
+        super(menu);
         this.options = Arrays.asList(
                 "Add to cart",
                 "Play"

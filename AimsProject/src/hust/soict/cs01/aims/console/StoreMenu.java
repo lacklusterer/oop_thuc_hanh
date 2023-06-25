@@ -8,8 +8,8 @@ import hust.soict.cs01.aims.mediaconcontainer.store.Store;
 import java.util.Arrays;
 
 public class StoreMenu extends BaseMenu{
-    public StoreMenu(Store store, Cart cart) {
-        super(store, cart);
+    public StoreMenu(BaseMenu menu) {
+        super(menu);
         this.options = Arrays.asList(
                 "See a media’s details",
                 "Add a media to cart",
@@ -50,7 +50,7 @@ public class StoreMenu extends BaseMenu{
                 } catch (NullPointerException ignored) {}
             }
             case 4 -> {
-                CartMenu cartMenu = new CartMenu(store, cart);
+                CartMenu cartMenu = new CartMenu(this);
                 cartMenu.showMenu();
             }
         }

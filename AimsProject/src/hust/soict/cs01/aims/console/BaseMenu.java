@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public abstract class BaseMenu {
-    protected Scanner scanner = new Scanner(System.in);
+    protected Scanner scanner;
     protected List<String> options;
     protected String menuName = "Options";
     protected String backMessage = "Back";
@@ -17,9 +17,16 @@ public abstract class BaseMenu {
     public Cart cart;
 
     // constructor
-    public BaseMenu(Store store, Cart cart) {
+    protected BaseMenu(Store store, Cart cart, Scanner scanner) {
         this.store = store;
         this.cart = cart;
+        this.scanner = scanner;
+    }
+
+    protected BaseMenu(BaseMenu menu) {
+        this.store = menu.store;
+        this.cart = menu.cart;
+        this.scanner = menu.scanner;
     }
 
     private boolean running = true;
