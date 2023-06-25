@@ -94,4 +94,8 @@ public class Cart implements MediaContainer {
                 ***************************************************
                 """, totalCost());
     }
+
+    public int currentItemsCount() {
+        return itemsOrdered.size();
+    }
 }
