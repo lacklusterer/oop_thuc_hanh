@@ -4,6 +4,7 @@ import hust.soict.cs01.aims.comparators.MediaComparatorByCostTitle;
 import hust.soict.cs01.aims.comparators.MediaComparatorByTitleCost;
 
 import java.util.Comparator;
+import java.util.Objects;
 
 public abstract class Media {
 
@@ -15,7 +16,9 @@ public abstract class Media {
     protected float cost;
     protected int id;
     private static int nbMedia = 0;
-
+    public boolean isMatch(String title) {
+        return Objects.equals(this.title, title);
+    }
     // Instance initializer
     {
         nbMedia++;
