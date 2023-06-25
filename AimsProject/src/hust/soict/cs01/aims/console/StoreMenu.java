@@ -34,10 +34,10 @@ public class StoreMenu extends BaseMenu{
             }
             case 2 -> {
                 Media mediaToAdd = promptUser4Media(store);
-                    try {
-                        cart.addMedia(mediaToAdd);
-                        System.out.printf("Added %s to cart\n", mediaToAdd.getTitle());
-                    } catch (NullPointerException ignored) {}
+                if (mediaToAdd != null) {
+                    cart.addMedia(mediaToAdd);
+                    System.out.printf("Added %s to cart\n", mediaToAdd.getTitle());
+                }
             }
             case 3 -> {
                 Media media2Play = promptUser4Media(store);

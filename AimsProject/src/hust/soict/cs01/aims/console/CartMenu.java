@@ -69,10 +69,8 @@ public class CartMenu extends BaseMenu{
             case 3 -> {
                 Media mediaToRemove = promptUser4Media(cart);
                 if (mediaToRemove != null) {
-                    try {
-                        cart.removeMedia(mediaToRemove);
-                        System.out.printf("Removed %s from cart\n", mediaToRemove.getTitle());
-                    } catch (NullPointerException ignored) {}
+                    cart.removeMedia(mediaToRemove);
+                    System.out.printf("Removed %s from cart\n", mediaToRemove.getTitle());
                 }
             }
 
