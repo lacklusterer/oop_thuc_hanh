@@ -19,7 +19,7 @@ public class ConsoleTest {
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Morbius 2: Morbing time", "Action Comedy", 39.99f, 165, "Daniel Espinosa");
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 19.99f);
         Book book1 = new Book("BookTitle", "BookCategory", 19.99f);
-        CompactDisc cd1 = new CompactDisc("CDNuts", "CDCategory", 39.99f, "NaN");
+        CompactDisc cd1 = new CompactDisc("CDNuts", "CDCategory", 39.99f);
 
         store1.addMedia(dvd1, dvd2, dvd3, book1, cd1);
 
