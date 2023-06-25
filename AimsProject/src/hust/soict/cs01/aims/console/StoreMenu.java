@@ -27,11 +27,12 @@ public class StoreMenu extends BaseMenu{
     public void processChoice(int choice) {
         switch (choice) {
             case 1 -> {
-                Media mediaToPrint = promptUser4Media(store);
-                try {
-                    mediaToPrint.toString();
-                } catch (NullPointerException ignored) {}
+                Media mediaToGetDetails = promptUser4Media(store);
+                if (mediaToGetDetails != null) {
+                    new MediaDetailsMenu(this, mediaToGetDetails).showMenu();
+                }
             }
+
             case 2 -> {
                 Media mediaToAdd = promptUser4Media(store);
                 if (mediaToAdd != null) {
@@ -39,6 +40,7 @@ public class StoreMenu extends BaseMenu{
                     System.out.printf("Added %s to cart\n", mediaToAdd.getTitle());
                 }
             }
+
             case 3 -> {
                 Media media2Play = promptUser4Media(store);
                 if (!(media2Play instanceof Playable playableMedia)) {
@@ -49,6 +51,7 @@ public class StoreMenu extends BaseMenu{
                     playableMedia.play();
                 } catch (NullPointerException ignored) {}
             }
+
             case 4 -> new CartMenu(this).showMenu();
         }
     }
