@@ -1,7 +1,7 @@
 package hust.soict.cs01.aims.console;
 
-import hust.soict.cs01.aims.cart.Cart;
-import hust.soict.cs01.aims.store.Store;
+import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
+import hust.soict.cs01.aims.mediaconcontainer.store.Store;
 
 import java.util.Arrays;
 

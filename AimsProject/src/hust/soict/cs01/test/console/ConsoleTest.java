@@ -1,11 +1,11 @@
 package hust.soict.cs01.test.console;
 
-import hust.soict.cs01.aims.cart.Cart;
+import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
 import hust.soict.cs01.aims.console.MainMenu;
 import hust.soict.cs01.aims.media.Book;
 import hust.soict.cs01.aims.media.CompactDisc;
 import hust.soict.cs01.aims.media.DigitalVideoDisc;
-import hust.soict.cs01.aims.store.Store;
+import hust.soict.cs01.aims.mediaconcontainer.store.Store;
 
 public class ConsoleTest {
     public static void main(String[] args) {
@@ -21,6 +21,7 @@ public class ConsoleTest {
         store1.addMedia(dvd1, dvd2, dvd3, book1, cd1);
 
         cart1.addMedia(dvd1);
+        cart1.addMedia(book1);
 
         MainMenu mainMenu = new MainMenu(store1, cart1);
         mainMenu.showMenu();

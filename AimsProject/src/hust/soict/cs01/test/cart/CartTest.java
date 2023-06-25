@@ -1,13 +1,8 @@
 package hust.soict.cs01.test.cart;
 
-import hust.soict.cs01.aims.media.Book;
-import hust.soict.cs01.aims.media.CompactDisc;
 import hust.soict.cs01.aims.media.DigitalVideoDisc;
-import hust.soict.cs01.aims.cart.Cart;
-import hust.soict.cs01.aims.media.Media;
+import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class CartTest {

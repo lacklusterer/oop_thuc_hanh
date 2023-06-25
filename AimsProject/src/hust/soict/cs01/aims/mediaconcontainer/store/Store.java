@@ -1,11 +1,12 @@
-package hust.soict.cs01.aims.store;
+package hust.soict.cs01.aims.mediaconcontainer.store;
 
+import hust.soict.cs01.aims.mediaconcontainer.MediaContainer;
 import hust.soict.cs01.aims.media.Media;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Store {
+public class Store implements MediaContainer {
     private int storageSpace = 200;
     private ArrayList<Media> itemsInStore = new ArrayList<Media>();
 
@@ -33,20 +34,21 @@ public class Store {
         }
     }
 
-    public void searchTitle(String title) {
+    @Override
+    public Media searchByTitle(String title) {
         for (Media item : itemsInStore) {
             if (item.isMatch(title)) {
                 System.out.println(item);
-                return;
+                return item;
             }
         }
-        System.out.println("No match!");
+        return null;
     }
 
     public void print() {
         System.out.print("""
                 ***********************Store**********************\s
-                Ordered Items:
+                Items in store:
                 """);
         int i = 0;
         for (Media media : itemsInStore) {

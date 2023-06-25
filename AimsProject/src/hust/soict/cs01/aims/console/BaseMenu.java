@@ -1,8 +1,9 @@
 package hust.soict.cs01.aims.console;
 
-import hust.soict.cs01.aims.cart.Cart;
+import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
 import hust.soict.cs01.aims.media.Media;
-import hust.soict.cs01.aims.store.Store;
+import hust.soict.cs01.aims.mediaconcontainer.store.Store;
+import hust.soict.cs01.aims.mediaconcontainer.MediaContainer;
 
 import java.util.List;
 import java.util.Scanner;
@@ -25,10 +26,10 @@ public abstract class BaseMenu {
 
     // methods
     public void exit() {running = false;}
-    public Media promptUser4Media() {
+    public Media promptUser4Media(MediaContainer mediaContainer) { // input title, validate
         System.out.println("Enter media's title: ");
         String title = scanner.nextLine();
-        Media foundMedia = cart.searchByTitle(title.trim());
+        Media foundMedia = mediaContainer.searchByTitle(title.trim());
         if (foundMedia == null) {
             System.out.println("No match!");
         }

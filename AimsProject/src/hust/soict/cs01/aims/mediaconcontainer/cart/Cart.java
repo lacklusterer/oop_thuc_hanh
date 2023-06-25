@@ -1,17 +1,17 @@
-package hust.soict.cs01.aims.cart;
+package hust.soict.cs01.aims.mediaconcontainer.cart;
 
+import hust.soict.cs01.aims.mediaconcontainer.MediaContainer;
 import hust.soict.cs01.aims.media.Media;
 
 import java.util.ArrayList;
 
-public class Cart {
+public class Cart implements MediaContainer {
     public static final int MAX_NUMBERS_ORDERED = 20;
     private ArrayList<Media> itemsOrdered = new ArrayList<>();
 
     public void addMedia(Media media) {
         if (itemsOrdered.size() < MAX_NUMBERS_ORDERED) {
             itemsOrdered.add(media);
-            System.out.printf("Added media %s to cart\n", media.getTitle());
         } else {
             System.out.println("Store is full!");
         }
@@ -56,10 +56,12 @@ public class Cart {
         System.out.println("No match!");
     }
 */
+
+    @Override
     public Media searchByTitle(String title) {
-        for (Media media : itemsOrdered) {
-            if (media.isMatch(title)) {
-                return media;
+        for (Media item : itemsOrdered) {
+            if (item.isMatch(title)) {
+                return item;
             }
         }
         return null; // No match found
