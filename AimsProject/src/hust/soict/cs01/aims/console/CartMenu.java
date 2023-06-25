@@ -29,11 +29,10 @@ public class CartMenu extends BaseMenu{
         switch (choice) {
             case 1 -> {
                 System.out.println("Filter medias in cart by (1) id or (2) title?");
-                int searchType = scanner.nextInt();
-                scanner.nextLine(); // consumes newline character
+                int searchType = Integer.parseInt(scanner.nextLine());
                 if (searchType == 1) {
                     System.out.println("Enter media's id: ");
-                    cart.searchById(scanner.nextInt());
+                    cart.searchById(Integer.parseInt(scanner.nextLine()));
                 } else if (searchType == 2) {
                     System.out.println("Enter media's title: ");
                     String title = scanner.nextLine();
@@ -52,7 +51,7 @@ public class CartMenu extends BaseMenu{
 
             case 2 -> {
                 System.out.println("Sort medias in cart by (1) title-cost or (2) cost title?");
-                int sortType = scanner.nextInt();
+                int sortType = Integer.parseInt(scanner.nextLine());
                 if (sortType == 1) {
                     cart.sortByTitleCost();
                     System.out.println("Sorted by title-cost");
@@ -65,7 +64,15 @@ public class CartMenu extends BaseMenu{
             }
 
             case 3 -> {
-                System.out.println("Remove media from cart");
+                System.out.println("Enter media's title: ");
+                String title = scanner.nextLine();
+                Media mediaToRemove = cart.searchByTitle(title);
+                if (mediaToRemove != null) {
+                    cart.removeMedia(mediaToRemove);
+                    System.out.printf("Removed %s from cart\n", title);
+                } else {
+                    System.out.println("No match!");
+                }
             }
 
             case 4 -> {

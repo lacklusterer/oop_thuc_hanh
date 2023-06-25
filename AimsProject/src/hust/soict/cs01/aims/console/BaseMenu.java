@@ -47,7 +47,7 @@ public abstract class BaseMenu {
 
             // process choice
             try {
-                int choice = scanner.nextInt();
+                int choice = Integer.parseInt(scanner.nextLine());
                 if (choice == 0) {
                     exit();
                 } else if (choice > 0 && choice <= options.size()) {
