@@ -1,9 +1,11 @@
 package hust.soict.cs01.aims.screen;
 
+import hust.soict.cs01.aims.media.Media;
 import hust.soict.cs01.aims.mediaconcontainer.store.Store;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class StoreScreen extends JFrame {
     private Store store;
@@ -57,4 +59,17 @@ public class StoreScreen extends JFrame {
 
         return header;
     }
+
+        JPanel createCenter() {
+            JPanel center = new JPanel();
+            center.setLayout(new GridLayout(3, 3, 2, 2));
+
+            ArrayList<Media> mediaInStore = store.getItemsInStore();
+            for (int i =0; i < 9; i++) {
+                // MediaStore cell = new MediaStore(mediaInStore.get(i));
+                // center.add(cell)
+            }
+
+            return center;
+        }
 }
