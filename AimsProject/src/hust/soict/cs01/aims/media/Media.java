@@ -4,18 +4,21 @@ import hust.soict.cs01.aims.comparators.MediaComparatorByCostTitle;
 import hust.soict.cs01.aims.comparators.MediaComparatorByTitleCost;
 
 import java.util.Comparator;
+import java.util.Objects;
 
 public abstract class Media {
 
-    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByCostTitle();
-    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByTitleCost();
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
 
     protected String title;
     protected String category;
     protected float cost;
     protected int id;
     private static int nbMedia = 0;
-
+    public boolean isMatch(String title) {
+        return Objects.equals(this.title, title);
+    }
     // Instance initializer
     {
         nbMedia++;
