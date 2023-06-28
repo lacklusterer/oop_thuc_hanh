@@ -3,6 +3,7 @@ package hust.soict.cs01.aims.screen;
 import javax.swing.*;
 
 import hust.soict.cs01.aims.media.*;
+import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,6 +11,7 @@ import java.awt.event.ActionListener;
 
 public class MediaStore extends JPanel {
     private Media media;
+    private Cart cart;
     public MediaStore(Media media) {
 
         this.media = media;
@@ -25,7 +27,15 @@ public class MediaStore extends JPanel {
         JPanel container = new JPanel();
         container.setLayout(new FlowLayout(FlowLayout.CENTER));
 
-        container.add(new JButton("Add to cart"));
+        // Add to cart button
+        JButton addToCart = new JButton("Add to cart");
+        addToCart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cart.addMedia(media);
+            }
+        });
+        container.add(addToCart);
 
         if (media instanceof Playable) {
             JButton playButton = new JButton("Play");
