@@ -9,7 +9,20 @@ import java.util.ArrayList;
 
 public class StoreScreen extends JFrame {
     private Store store;
-    
+
+    public StoreScreen(Store store) {
+        this.store = store;
+        Container cp = getContentPane();
+        cp.setLayout(new BorderLayout());
+
+        cp.add(createNorth(), BorderLayout.NORTH);
+        cp.add(createCenter(), BorderLayout.CENTER);
+
+        setVisible(true);
+        setTitle("Store");
+        setSize(1024, 768);
+    }
+
     JPanel createNorth() {
         JPanel north = new JPanel();
         north.setLayout(new BoxLayout(north, BoxLayout.Y_AXIS));
@@ -66,8 +79,8 @@ public class StoreScreen extends JFrame {
 
             ArrayList<Media> mediaInStore = store.getItemsInStore();
             for (int i =0; i < 9; i++) {
-                // MediaStore cell = new MediaStore(mediaInStore.get(i));
-                // center.add(cell)
+                MediaStore cell = new MediaStore(mediaInStore.get(i));
+                center.add(cell);
             }
 
             return center;
