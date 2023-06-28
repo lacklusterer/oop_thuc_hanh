@@ -74,11 +74,13 @@ public class StoreScreen extends JFrame {
     }
 
         JPanel createCenter() {
+
             JPanel center = new JPanel();
             center.setLayout(new GridLayout(3, 3, 2, 2));
 
             ArrayList<Media> mediaInStore = store.getItemsInStore();
-            for (int i =0; i < 9; i++) {
+            int itemsToAdd = Math.min(9, mediaInStore.size());
+            for (int i = 0; i < itemsToAdd; i++) {
                 MediaStore cell = new MediaStore(mediaInStore.get(i));
                 center.add(cell);
             }
