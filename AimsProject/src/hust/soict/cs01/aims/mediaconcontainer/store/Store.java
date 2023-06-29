@@ -57,4 +57,8 @@ public class Store implements MediaContainer {
         }
         System.out.println("***************************************************");
     }
+
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
 }

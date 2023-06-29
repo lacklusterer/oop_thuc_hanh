@@ -35,6 +35,10 @@ public class CompactDisc extends Disc implements Playable{
         }
     }
 
+    public ArrayList<Track> getTracksList() {
+        return tracksList;
+    }
+
     @Override
     public int getLength() {
         int sumLength = 0;
