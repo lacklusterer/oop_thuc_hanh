@@ -97,4 +97,32 @@
          </children>
       </VBox>
    </center>
+   <right>
+      <VBox prefHeight="200.0" BorderPane.alignment="TOP_CENTER">
+         <padding>
+            <Insets top="50.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label lineSpacing="10.0" text="Total">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="\$0" textFill="AQUA">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" style="-fx-background-color: red;" text="Place Order" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </right>
 </BorderPane>
