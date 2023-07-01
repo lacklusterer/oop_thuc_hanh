@@ -2,8 +2,10 @@ package hust.soict.cs01.aims.mediaconcontainer.cart;
 
 import hust.soict.cs01.aims.mediaconcontainer.MediaContainer;
 import hust.soict.cs01.aims.media.Media;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Cart implements MediaContainer {
     public static final int MAX_NUMBERS_ORDERED = 20;
@@ -15,6 +17,10 @@ public class Cart implements MediaContainer {
         } else {
             System.out.println("Store is full!");
         }
+    }
+
+    public void addMedia (Media ... medias) {
+        itemsOrdered.addAll(Arrays.asList(medias));
     }
 
     public void removeMedia(Media media) {
@@ -44,18 +50,6 @@ public class Cart implements MediaContainer {
         }
         System.out.println("No match!");
     }
-/*
-    public void searchByTitle(String title) {
-        for (Media item : itemsOrdered) {
-            if (item.isMatch(title)) {
-                System.out.println("Found media!");
-                System.out.println(item);
-                return;
-            }
-        }
-        System.out.println("No match!");
-    }
-*/
 
     @Override
     public Media searchByTitle(String title) {
@@ -97,5 +91,9 @@ public class Cart implements MediaContainer {
 
     public int currentItemsCount() {
         return itemsOrdered.size();
+    }
+
+    public ObservableList<Media> getItemsOrdered() {
+        return (ObservableList<Media>) itemsOrdered;
     }
 }
