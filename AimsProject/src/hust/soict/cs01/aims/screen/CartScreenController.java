@@ -1,11 +1,10 @@
 package hust.soict.cs01.aims.screen;
 
 import hust.soict.cs01.aims.media.Media;
+import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.ToggleGroup;
-import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class CartScreenController {
@@ -25,12 +24,6 @@ public class CartScreenController {
 
     @FXML
     private TableColumn<Media, String> colMediacategory;
-
-    @FXML
-    private ToggleGroup filterCategory;
-
-    @FXML
-    private ToggleGroup tb;
 
     @FXML
     private TableView<Media> tblMedia;
