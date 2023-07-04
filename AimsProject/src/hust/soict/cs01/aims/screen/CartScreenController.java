@@ -1,11 +1,13 @@
 package hust.soict.cs01.aims.screen;
 
+import hust.soict.cs01.aims.media.DigitalVideoDisc;
 import hust.soict.cs01.aims.media.Media;
 import hust.soict.cs01.aims.media.Playable;
 import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
 import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -42,7 +44,14 @@ public class CartScreenController {
     private TableView<Media> tblMedia;
 
     @FXML
+    void btnRemovePressed(ActionEvent event) {
+        Media media = tblMedia.getSelectionModel().getSelectedItem();
+        cart.removeMedia(media);
+    }
+
+    @FXML
     private void initialize() {
+        System.out.println("test");
         colMediaTitle.setCellValueFactory(new PropertyValueFactory<Media, String>("title"));
         colMediacategory.setCellValueFactory(new PropertyValueFactory<Media, String>("category"));
         colMediaCost.setCellValueFactory(new PropertyValueFactory<Media, Float>("cost"));
@@ -64,7 +73,7 @@ public class CartScreenController {
         }
     void updateButtonBar(Media media) {
         btnRemove.setVisible(true);
-        if(media instanceof Playable) {
+        if (media instanceof Playable) {
             btnPlay.setVisible(true);
         } else {
             btnPlay.setVisible(false);

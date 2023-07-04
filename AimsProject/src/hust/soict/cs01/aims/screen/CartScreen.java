@@ -15,7 +15,6 @@ public class CartScreen extends JFrame {
 
     public CartScreen(Cart cart) {
         super();
-
         this.cart = cart;
 
         JFXPanel fxPanel = new JFXPanel();
