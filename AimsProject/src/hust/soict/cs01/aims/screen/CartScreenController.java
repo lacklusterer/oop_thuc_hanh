@@ -33,6 +33,9 @@ public class CartScreenController {
     private Button btnRemove;
 
     @FXML
+    private Button btnOrder;
+
+    @FXML
     private TableColumn<Media, Float> colMediaCost;
 
     @FXML
@@ -51,6 +54,11 @@ public class CartScreenController {
     void btnRemovePressed(ActionEvent event) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
         cart.removeMedia(media);
+    }
+
+    @FXML
+    void btnPlaceOrderPressed(ActionEvent event) {
+        cart.placeOrder();
     }
 
     @FXML
