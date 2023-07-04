@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import javax.swing.event.ChangeEvent;
@@ -44,6 +45,9 @@ public class CartScreenController {
     private TableView<Media> tblMedia;
 
     @FXML
+    private ToggleGroup filterCategory;
+
+    @FXML
     void btnRemovePressed(ActionEvent event) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
         cart.removeMedia(media);
@@ -51,7 +55,6 @@ public class CartScreenController {
 
     @FXML
     private void initialize() {
-        System.out.println("test");
         colMediaTitle.setCellValueFactory(new PropertyValueFactory<Media, String>("title"));
         colMediacategory.setCellValueFactory(new PropertyValueFactory<Media, String>("category"));
         colMediaCost.setCellValueFactory(new PropertyValueFactory<Media, Float>("cost"));
