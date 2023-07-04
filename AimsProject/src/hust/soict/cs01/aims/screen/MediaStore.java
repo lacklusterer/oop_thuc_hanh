@@ -43,27 +43,8 @@ public class MediaStore extends JPanel {
 
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    // create a dialog Box
-                    JDialog playDialog = new JDialog(new JFrame(), media.getTitle());
-                    JLabel label;
-
-                    if (media instanceof DigitalVideoDisc) {
-                        DigitalVideoDisc dvd = (DigitalVideoDisc) media;
-                        label = new JLabel("Playing DVD: " + dvd.getTitle() + "\n" + "DVD length: " + dvd.getLength());
-                    } else {
-                        CompactDisc cd = (CompactDisc) media;
-                        StringBuilder trackPlay = new StringBuilder();
-                        for (Track track : cd.getTracksList()) {
-                            trackPlay.append("Playing Track: " + track.getTitle() + "\n" + "Track length: " + track.getLength()+"\n");
-                        }
-                        label = new JLabel(String.valueOf(trackPlay));
-                    }
-
-                    playDialog.add(label);
-
-                    playDialog.setSize(450, 450);
-
-                    playDialog.setVisible(true);
+                    Playable playableMedia = (Playable) media;
+                    playableMedia.play();
                 }
             });
             container.add(playButton);
