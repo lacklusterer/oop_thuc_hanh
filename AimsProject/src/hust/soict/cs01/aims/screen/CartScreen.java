@@ -22,6 +22,9 @@ public class CartScreen extends JFrame {
         JFXPanel fxPanel = new JFXPanel();
         this.add(fxPanel);
 
+        this.setSize(1024, 768);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         this.setTitle("Cart");
         this.setVisible(true);
         Platform.runLater(new Runnable() {
@@ -38,13 +41,5 @@ public class CartScreen extends JFrame {
                 }
             }
         });
-    }
-
-    public static void main(String[] args) {
-        Cart cart1 = new Cart();
-        CompactDisc cd1 = new CompactDisc("CDNuts", "CDCategory", 39.99f);
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("Obama: The Movie", "Comedy", 29.99f, 180, "Michael Bay");
-        cart1.addMedia(cd1, dvd1);
-        new CartScreen(cart1);
     }
 }

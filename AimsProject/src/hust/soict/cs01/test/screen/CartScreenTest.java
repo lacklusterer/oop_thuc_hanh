@@ -5,7 +5,6 @@ import hust.soict.cs01.aims.media.CompactDisc;
 import hust.soict.cs01.aims.media.DigitalVideoDisc;
 import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
 import hust.soict.cs01.aims.screen.CartScreen;
-import javax.swing.*;
 
 public class CartScreenTest {
     public static void main(String[] args) {
