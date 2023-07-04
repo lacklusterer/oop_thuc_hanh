@@ -1,6 +1,7 @@
 package hust.soict.cs01.aims.screen;
 
 import hust.soict.cs01.aims.media.CompactDisc;
+import hust.soict.cs01.aims.media.DigitalVideoDisc;
 import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
@@ -42,7 +43,8 @@ public class CartScreen extends JFrame {
     public static void main(String[] args) {
         Cart cart1 = new Cart();
         CompactDisc cd1 = new CompactDisc("CDNuts", "CDCategory", 39.99f);
-        cart1.addMedia(cd1);
+        DigitalVideoDisc dvd1 = new DigitalVideoDisc("Obama: The Movie", "Comedy", 29.99f, 180, "Michael Bay");
+        cart1.addMedia(cd1, dvd1);
         new CartScreen(cart1);
     }
 }

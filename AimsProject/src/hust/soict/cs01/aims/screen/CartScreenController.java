@@ -79,8 +79,10 @@ public class CartScreenController {
     @FXML
     void btnPlayPressed(ActionEvent event) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
-
+        Playable playableMedia = (Playable) media;
+        playableMedia.play();
     }
+
     @FXML
     void btnRemovePressed(ActionEvent event) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
