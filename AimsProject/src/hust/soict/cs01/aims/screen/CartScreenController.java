@@ -1,21 +1,17 @@
 package hust.soict.cs01.aims.screen;
 
-import hust.soict.cs01.aims.media.DigitalVideoDisc;
 import hust.soict.cs01.aims.media.Media;
 import hust.soict.cs01.aims.media.Playable;
 import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
-import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
-
-import javax.swing.event.ChangeEvent;
 
 public class CartScreenController {
 
@@ -51,17 +47,6 @@ public class CartScreenController {
     private ToggleGroup filterCategory;
 
     @FXML
-    void btnRemovePressed(ActionEvent event) {
-        Media media = tblMedia.getSelectionModel().getSelectedItem();
-        cart.removeMedia(media);
-    }
-
-    @FXML
-    void btnPlaceOrderPressed(ActionEvent event) {
-        cart.placeOrder();
-    }
-
-    @FXML
     private void initialize() {
         colMediaTitle.setCellValueFactory(new PropertyValueFactory<Media, String>("title"));
         colMediacategory.setCellValueFactory(new PropertyValueFactory<Media, String>("category"));
@@ -89,5 +74,21 @@ public class CartScreenController {
         } else {
             btnPlay.setVisible(false);
         }
+    }
+
+    @FXML
+    void btnPlayPressed(ActionEvent event) {
+        Media media = tblMedia.getSelectionModel().getSelectedItem();
+
+    }
+    @FXML
+    void btnRemovePressed(ActionEvent event) {
+        Media media = tblMedia.getSelectionModel().getSelectedItem();
+        cart.removeMedia(media);
+    }
+
+    @FXML
+    void btnPlaceOrderPressed(ActionEvent event) {
+        cart.placeOrder();
     }
 }
