@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class StoreScreen extends JFrame {
+    private CartScreen cartScreen;
     private Store store;
     private Cart cart;
 
@@ -74,8 +75,10 @@ public class StoreScreen extends JFrame {
         cartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new CartScreen(cart);
-                dispose();
+                if (cartScreen == null) {
+                    cartScreen = new CartScreen(cart, StoreScreen.this);
+                }
+                cartScreen.setVisible(true);
             }
         });
 
@@ -88,18 +91,17 @@ public class StoreScreen extends JFrame {
         return header;
     }
 
-        JPanel createCenter() {
+    JPanel createCenter() {
 
-            JPanel center = new JPanel();
-            center.setLayout(new GridLayout(3, 3, 2, 2));
+        JPanel center = new JPanel();
+        center.setLayout(new GridLayout(3, 3, 2, 2));
 
-            ArrayList<Media> mediaInStore = store.getItemsInStore();
-            int itemsToAdd = Math.min(9, mediaInStore.size());
-            for (int i = 0; i < itemsToAdd; i++) {
-                MediaStore cell = new MediaStore(mediaInStore.get(i), cart);
-                center.add(cell);
-            }
-
-            return center;
+        ArrayList<Media> mediaInStore = store.getItemsInStore();
+        int itemsToAdd = Math.min(9, mediaInStore.size());
+        for (int i = 0; i < itemsToAdd; i++) {
+            MediaStore cell = new MediaStore(mediaInStore.get(i), cart);
+            center.add(cell);
+        }
+        return center;
         }
 }

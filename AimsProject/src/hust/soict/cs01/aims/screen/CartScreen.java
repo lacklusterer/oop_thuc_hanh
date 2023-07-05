@@ -12,10 +12,12 @@ import java.io.IOException;
 
 public class CartScreen extends JFrame {
     private Cart cart;
+    private StoreScreen storeScreen;
 
-    public CartScreen(Cart cart) {
+    public CartScreen(Cart cart, StoreScreen storeScreen) {
         super();
         this.cart = cart;
+        this.storeScreen = storeScreen;
 
         JFXPanel fxPanel = new JFXPanel();
         this.add(fxPanel);
@@ -30,7 +32,7 @@ public class CartScreen extends JFrame {
             public void run() {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("cart.fxml"));
-                    CartScreenController controller = new CartScreenController(cart);
+                    CartScreenController controller = new CartScreenController(cart, storeScreen);
                     loader.setController(controller);
                     Parent root = loader.load();
                     fxPanel.setScene(new Scene(root));

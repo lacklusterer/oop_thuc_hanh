@@ -8,18 +8,20 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class CartScreenController {
-
     private Cart cart;
+    private StoreScreen storeScreen;
 
-    public CartScreenController(Cart cart) {
+    public CartScreenController(Cart cart, StoreScreen storeScreen) {
         super();
         this.cart = cart;
+        this.storeScreen = storeScreen;
     }
 
     @FXML
@@ -39,6 +41,9 @@ public class CartScreenController {
 
     @FXML
     private TableColumn<Media, String> colMediacategory;
+
+    @FXML
+    private MenuItem menuViewStore;
 
     @FXML
     private TableView<Media> tblMedia;
@@ -67,13 +72,10 @@ public class CartScreenController {
                 });
 
         }
+
     void updateButtonBar(Media media) {
         btnRemove.setVisible(true);
-        if (media instanceof Playable) {
-            btnPlay.setVisible(true);
-        } else {
-            btnPlay.setVisible(false);
-        }
+        btnPlay.setVisible(media instanceof Playable);
     }
 
     @FXML
@@ -92,5 +94,10 @@ public class CartScreenController {
     @FXML
     void btnPlaceOrderPressed(ActionEvent event) {
         cart.placeOrder();
+    }
+
+    @FXML
+    void viewStoreSelected(ActionEvent event) {
+        storeScreen.setVisible(true);
     }
 }

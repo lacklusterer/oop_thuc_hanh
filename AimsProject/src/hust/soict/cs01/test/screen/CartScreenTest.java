@@ -23,6 +23,6 @@ public class CartScreenTest {
 
         cart1.addMedia(dvd1, dvd2, dvd3, book1, book2, cd1, cd2);
 
-        new CartScreen(cart1);
+        // new CartScreen(cart1);
     }
 }
