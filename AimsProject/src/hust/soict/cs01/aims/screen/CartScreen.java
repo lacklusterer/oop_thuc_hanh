@@ -1,7 +1,5 @@
 package hust.soict.cs01.aims.screen;
 
-import hust.soict.cs01.aims.media.CompactDisc;
-import hust.soict.cs01.aims.media.DigitalVideoDisc;
 import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;

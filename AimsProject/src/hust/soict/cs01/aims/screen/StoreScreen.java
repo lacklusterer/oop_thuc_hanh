@@ -1,23 +1,29 @@
 package hust.soict.cs01.aims.screen;
 
 import hust.soict.cs01.aims.media.Media;
+import hust.soict.cs01.aims.mediaconcontainer.cart.Cart;
 import hust.soict.cs01.aims.mediaconcontainer.store.Store;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class StoreScreen extends JFrame {
     private Store store;
+    private Cart cart;
 
     public StoreScreen(Store store) {
         this.store = store;
+        this.cart = new Cart();
         Container cp = getContentPane();
         cp.setLayout(new BorderLayout());
 
         cp.add(createNorth(), BorderLayout.NORTH);
         cp.add(createCenter(), BorderLayout.CENTER);
 
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setTitle("Store");
         setSize(1024, 768);
@@ -60,14 +66,21 @@ public class StoreScreen extends JFrame {
         title.setFont(new Font(title.getFont().getName(), Font.PLAIN, 50));
         title.setForeground(Color.CYAN);
 
-        JButton cart = new JButton("View cart");
-        cart.setPreferredSize(new Dimension(100, 50));
-        cart.setMaximumSize(new Dimension(100, 50));
+        JButton cartButton = new JButton("View cart");
+        cartButton.setPreferredSize(new Dimension(100, 50));
+        cartButton.setMaximumSize(new Dimension(100, 50));
+
+        cartButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new CartScreen(cart);
+            }
+        });
 
         header.add(Box.createRigidArea(new Dimension(10, 10)));
         header.add(title);
         header.add(Box.createHorizontalGlue());
-        header.add(cart);
+        header.add(cartButton);
         header.add(Box.createRigidArea(new Dimension(10, 10)));
 
         return header;
@@ -81,7 +94,7 @@ public class StoreScreen extends JFrame {
             ArrayList<Media> mediaInStore = store.getItemsInStore();
             int itemsToAdd = Math.min(9, mediaInStore.size());
             for (int i = 0; i < itemsToAdd; i++) {
-                MediaStore cell = new MediaStore(mediaInStore.get(i));
+                MediaStore cell = new MediaStore(mediaInStore.get(i), cart);
                 center.add(cell);
             }
 

@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 public class MediaStore extends JPanel {
     private Media media;
     private Cart cart;
-    public MediaStore(Media media) {
+    public MediaStore(Media media, Cart cart) {
 
         this.media = media;
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
