@@ -17,7 +17,7 @@ public class Cart implements MediaContainer {
         if (itemsOrdered.size() < MAX_NUMBERS_ORDERED) {
             itemsOrdered.add(media);
         } else {
-            System.out.println("Store is full!");
+            System.out.println("Cart is full!");
         }
     }
 
