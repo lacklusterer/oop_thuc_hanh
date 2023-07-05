@@ -12,8 +12,9 @@ import java.awt.event.ActionListener;
 public class MediaStore extends JPanel {
     private Media media;
     private Cart cart;
-    public MediaStore(Media media, Cart cart) {
 
+    // Constructor
+    public MediaStore(Media media, Cart cart) {
         this.media = media;
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
@@ -37,6 +38,7 @@ public class MediaStore extends JPanel {
         });
         container.add(addToCart);
 
+        // Play button
         if (media instanceof Playable) {
             JButton playButton = new JButton("Play");
             playButton.addActionListener(new ActionListener() {
@@ -59,6 +61,4 @@ public class MediaStore extends JPanel {
 
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
     }
-
-
 }

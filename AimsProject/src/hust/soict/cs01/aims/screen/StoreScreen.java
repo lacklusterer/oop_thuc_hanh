@@ -14,6 +14,7 @@ public class StoreScreen extends JFrame {
     private Store store;
     private Cart cart;
 
+    // Constructor
     public StoreScreen(Store store) {
         this.store = store;
         this.cart = new Cart();
@@ -74,6 +75,7 @@ public class StoreScreen extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new CartScreen(cart);
+                dispose();
             }
         });
 
